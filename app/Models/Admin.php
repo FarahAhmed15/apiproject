@@ -19,6 +19,9 @@ class Admin extends Authenticatable
     public function categories(){
         return $this->hasMany(Category::class);
     }
+    public function services(){
+        return $this->hasMany(Service::class);
+    }
     public function serviceproviders(){
         return $this->hasMany(ServiceProvider::class);
     }

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->date('required_date');
             $table->timestamp('order_date');
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->enum('status', ['pending', 'completed'])->default('pending');
             $table->timestamps();
         });
     }

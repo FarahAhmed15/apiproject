@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('service_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('order_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('service_provider_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->decimal('price', 8, 2);
+            $table->decimal('commission', 8, 2)->nullable();
             $table->timestamps();
         });
     }

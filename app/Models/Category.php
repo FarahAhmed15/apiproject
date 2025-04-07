@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable=['category_name','description','admin_id'];
+    protected $fillable=['category_name','admin_id'];
 
     public function serviceproviders(){
         return $this->hasMany(ServiceProvider::class);

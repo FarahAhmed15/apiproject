@@ -26,4 +26,8 @@ class ServiceProvider extends Authenticatable
     public function services(){
         return $this->belongsToMany(Service::class,'service_service_provider')->withPivot('price');
     }
+    public function orderServices()
+    {
+        return $this->hasMany(OrderService::class);
+    }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-    protected $fillable = ['service_type', 'description'];
+    protected $fillable = ['service_type'];
 
     public function serviceproviders(){
         return $this->belongsToMany(ServiceProvider::class,'service_service_provider')->withPivot('price');
@@ -17,5 +17,12 @@ class Service extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
+    public function orderServices()
+    {
+        return $this->hasMany(OrderService::class);
     }
 }
